@@ -1,16 +1,47 @@
-Package: BuildABiocWorkshop2020
-Title: Bioconductor Workshop Template and Github Actions
+Package: SpatialExperimentWorkshop
+Title: Spatial Transcriptomics workflow using SpatialExperiment package
 Version: 0.1.1
 Authors@R: 
-    person(given = "Sean",
-           family = "Davis",
+    person(given = "Dario",
+           family = "Righelli",
            role = c("aut", "cre"),
-           email = "seandavi@gmail.com",
-           comment = c(ORCID = "your-orc-id-here"))
-Description: This package serves as a template for using github actions to 
-    prepare a Bioconductor Workshop package for use. In particular,
-    a pkgdown website and docker image are generated based on workflow 
-    settings. 
+           email = "dario.righelli@gmail.com",
+           comment = c(ORCID = "0000-0003-1504-3583")),
+    person(given = "Davide",
+           family = "Risso",
+           role = c("aut"),
+           email = "davide.risso@unipd.it")
+Description: Cells spatial organization within tissues is important for the 
+understanding of cell communications and interactions in developmental, 
+physiological, and pathological states.
+Lately several technologies are emerging for the joint extraction of
+transcripts quantification and their spatial organization at single cell level.
+Among others, seqFISH and 10x Visium Spatial Gene Expression (VSGE) seem to be 
+the most widely used platforms because of their ability to extract hundreds to 
+thousands of transcripts at the same time in the first case and for the standard 
+protocol implemented in the latter.
+Briefly, seqFISH combines temporal barcodes in multiple hybridization rounds 
+with microscopy fluorescent imaging to detect the spatial coordinates of
+transcripts.
+On the other hand, VSGE allows the joint analysis of microscopy images of a
+chip-placed frozen piece of tissue and its transcriptome at spot-barcode level.
+Given the lack of dedicated general tools for spatial transcriptomics, 
+we developed the SpatialExperiment Bioconductor package, which presents a
+set of two dedicated classes (SpatialExperiment and VisiumExperiment) both 
+extending the SingleCellExperiment Bioconductor class with slots and methods 
+for spatial transcriptomics data handling.
+This work could become the basis for facilitating further development of
+methods aimed to analyze this type of data, e.g., for spatial clustering 
+and the identification of spatially variable genes.
+Here, we present a short workshop showing how to analyze spatial transcriptomics
+with our SpatialExperiment package and how to use it in combination with other 
+analysis software.
+We will start by showing how to combine a SpatialExperiment with a 
+SingleCellExperiment to store multimodal datasets such as seqFISH 
+and scRNAseq and how to manage them to graphically visualize the data.
+Additionally, we will show how to create a VisiumExperiment object 
+starting from 10x Genomics public datasets and how to manage it for 
+clustering annotation and plotting. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -22,7 +53,7 @@ Suggests:
     knitr,
     rmarkdown,
     pkgdown
-URL: https://seandavi.github.io/BuildABiocWorkshop2020/
-BugReports: https://github.com/seandavi/BuildABiocWorkshop2020/issues/new/choose
+URL: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
+BugReports: https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/issues/new/
 VignetteBuilder: knitr
-DockerImage: seandavi/buildabiocworkshop2020:latest
+DockerImage: drighelli/EuroBioc2020_SpatialWorkshop:latest
