@@ -14,7 +14,7 @@ build all the pieces necessary for a workshop.
 
 ## Quickstart
 
-- [ ] Clone this repo, fork and rename it, or create a repo from this template
+- [x] Clone this repo, fork and rename it, or create a repo from this template
 - [ ] Edit `DESCRIPTION` file
   - [x] Change package name
   - [x] Change title and description
@@ -27,7 +27,9 @@ build all the pieces necessary for a workshop.
 
 ## Details
 
-To accomplish this follow each of the 7 steps below. Once your edit the yaml files, Github actions will run each time you commit to github and it creates the pkgdown website and docker image for you. 
+To accomplish this follow each of the 7 steps below. Once your edit the yaml files, 
+Github actions will run each time you commit to github and it 
+creates the pkgdown website and docker image for you. 
 
 ### 1. Clone this repo
 Clone this repo, fork and **rename** it, or create a repo from this template
@@ -55,14 +57,17 @@ Suggests:
 - Edit the last 3 lines of the DESCRIPTION FILE, URL, BugReports and DockerImage (described in more detail below)
 
 ### 3. Set up a website (Github Pages)
+
 In your repository, click on settings or url https://github.com/<github username>/<workshop repos name>/settings.  Midway down the page, in the GitHub Pages section, select source 'gh-pages branch'.  If only 'master branch' is visible, select master for now, but once Github actions runs, 'gh-pages branch' will be available and is required to render the website. 
   
 In the DESCRIPTION file, update the URL: to the website url eg https://seandavi.github.io/BuildABiocWorkshop2020/
 
 ### 4. Edit _pkgdown.yml
+
 Edit the file _pkgdown.yml, updating the url:, title and href: which should be your website url, title of your workshop and github repos url respectively.  You do not need to edit this file further. You do not need to add menus or links to vignettes. GitHub Actions and pkgdown will do this when it builds the website
 
 ### 5. Edit `.github/workflows/basic_checks.yaml`
+
 You need a dockerhub account, which if you don't have one, can be created at hub.docker.com.  Your <docker user name> maybe different to your <gitub username name>. 
 
 You do not need to create a docker image manually. Github actions will read Dockerfile located in this template, and using the yamls files will create, build and push to dockerhub an image with your desired name. 
