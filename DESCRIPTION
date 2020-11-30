@@ -2,7 +2,7 @@ Package: EuroBioc2020SpatialExperimentWorkshop
 Title: Spatial Transcriptomics workflow using SpatialExperiment package
 Version: 0.1.1
 Authors@R: 
-    person(given = "Dario",
+    c(person(given = "Dario",
            family = "Righelli",
            role = c("aut", "cre"),
            email = "dario.righelli@gmail.com",
@@ -10,7 +10,7 @@ Authors@R:
     person(given = "Davide",
            family = "Risso",
            role = c("aut"),
-           email = "davide.risso@unipd.it")
+           email = "davide.risso@unipd.it"))
 Description: Cells spatial organization within tissues is important for the 
     understanding of cell communications and interactions in developmental, 
     physiological, and pathological states.
@@ -56,4 +56,4 @@ Suggests:
 URL: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
 BugReports: https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/issues/new/
 VignetteBuilder: knitr
-DockerImage: drighelli/EuroBioc2020_SpatialWorkshop:latest
+DockerImage: drighelli/eurobioc2020spatialworkshop:latest
