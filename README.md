@@ -20,9 +20,9 @@ prived tools during the sessions.
 
 ## Results of successful deployment
 
-- A working docker image that contains the installed package and dependencies.
-- An up-to-date `pkgdown` website at https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
-- Docker image will be tagged with `latest`, `sha-XXXXXX` where `XXXXXX` is the hash of the current `master` commit, and `master`.
+- Link to the `pkgdown` website https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
+- docker image is drighelli/eurobioc2020spatialworkshop:latest
+
 
 ## To use the resulting image:
 
