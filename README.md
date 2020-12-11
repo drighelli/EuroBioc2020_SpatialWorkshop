@@ -12,9 +12,9 @@ The workshop will end with a mini-challenge for the attendees to handle with the
 prived tools during the sessions.
 
 # Authors:
-- [Dario Righelli] (github.com/drighelli) (dario.righelli@gmail.com)
-- [Helena L. Crowell] (github.com/HelenaLC) (helena.crowell@uzh.ch)
-- [Lukas M. Weber] (github.com/lmweber) (lukas.weber@jhu.edu)
+- [Dario Righelli](github.com/drighelli) (dario.righelli@gmail.com)
+- [Helena L. Crowell](github.com/HelenaLC) (helena.crowell@uzh.ch)
+- [Lukas M. Weber](github.com/lmweber) (lukas.weber@jhu.edu)
 
 
 
