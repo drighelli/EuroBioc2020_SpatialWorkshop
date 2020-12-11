@@ -1,10 +1,10 @@
 on: [push]
 jobs:
   job1:
-    runs-on: ubuntu-18.04
-    container: bioconductor/bioconductor_docker:RELEASE_3_12
+    runs-on: ubuntu-latest
+    container: bioconductor/bioconductor_docker:devel
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       - name: Query dependencies and update old packages
         run: |
@@ -16,7 +16,7 @@ jobs:
         
       - name: Cache R packages
         if: runner.os != 'Windows'
-        uses: actions/cache@v2
+        uses: actions/cache@v1
         with:
           path: /usr/local/lib/R/site-library
           key: ${{ runner.os }}-r-1-${{ hashFiles('.github/depends.Rds') }}
@@ -46,7 +46,7 @@ jobs:
         run: rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
         
-      - uses: docker/build-push-action@v2
+      - uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
