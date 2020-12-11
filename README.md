@@ -29,4 +29,5 @@ prived tools during the sessions.
 ```sh
 docker run -e PASSWORD=<PUTAPASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop:latest
 ```
+
 Once running, navigate to https://localhost:8787/ and then login with `rstudio`:`<ChosenPassword>`.
