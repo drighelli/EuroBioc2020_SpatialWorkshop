@@ -63,7 +63,8 @@ Suggests:
     knitr,
     rmarkdown,
     pkgdown
-
+Remotes:
+    drighelli/SpatialExperiment@VisiumExperimentDevelDario
 URL: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
 BugReports: https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/issues/new/
 VignetteBuilder: knitr
