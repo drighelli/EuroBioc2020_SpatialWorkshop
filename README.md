@@ -1,4 +1,6 @@
-# EuroBioc2020_SpatialWorkshop
+# EuroBioc2020 SpatialWorkshop
+
+
 
 This workshop is divided in three parts where we provide an overview
 of the most spreaded technologies for Spatial Transcriptomics, such as seqFISH
