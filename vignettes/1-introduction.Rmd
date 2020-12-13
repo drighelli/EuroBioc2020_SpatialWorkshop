@@ -5,4 +5,8 @@ author:
     affiliation: Department of Statistical Sciences, University of Padua, Padua, Italy
     email: dario.righelli@unipd.it
 output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{1. Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
