@@ -20,7 +20,7 @@ detect the transcripts quantification and their spatial coordinates into a refer
 
 # The SpatialExperiment class
 
-
+![The SpatialExperiment class](https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/images/SpatialExperimentFusedV1.png)
 
 
 To facilitate the implementation of methodologies and the spatial data handling
