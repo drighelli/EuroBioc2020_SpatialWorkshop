@@ -20,7 +20,8 @@ Authors@R:
     person(given = "Davide",
            family = "Risso",
            role = c("aut"),
-           email = "davide.risso@unipd.it"))
+           email = "davide.risso@unipd.it",
+           comment = c(ORCID = "0000-0001-8508-5012")))
 Description: Cells spatial organization within tissues is important for the 
     understanding of cell communications and interactions in developmental, 
     physiological, and pathological states.
