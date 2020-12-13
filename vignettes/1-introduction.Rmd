@@ -1,0 +1,8 @@
+---
+title: "1. Introduction"
+author: 
+  - name: Dario Righelli
+    affiliation: Department of Statistical Sciences, University of Padua, Padua, Italy
+    email: dario.righelli@unipd.it
+output: rmarkdown::html_vignette
+---
