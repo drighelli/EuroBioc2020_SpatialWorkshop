@@ -2,13 +2,12 @@ url: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop
 
 template:
   params:
-    bootswatch: flatly
+    bootswatch: simplex
     ganalytics: UA-93043521-1
 
 home:
   title: "EuroBioc2020_SpatialWorkshop"
   type: inverse
-
 
 navbar:
   right:
