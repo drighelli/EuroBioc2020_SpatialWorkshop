@@ -1,0 +1,34 @@
+---
+title: "1. Introduction to Spatial Transcriptomics"
+author: 
+  - name: Dario Righelli^[dario.righelli@gmail.com]
+    affiliation: Department of Statistical Sciences, University of Padova, Padua, Italy
+    email: dario.righelli@unipd.it
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{1. Introduction to Spatial Transcriptomics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+# Spatial Transcriptomics Techonlogies
+
+With Spatial Transcriptomics we refer to all thosetechnologies which are able to joint 
+detect the transcripts quantification and their spatial coordinates into a reference tissue.
+
+
+# The SpatialExperiment class
+
+
+
+
+To facilitate the implementation of methodologies and the spatial data handling
+in R, we designed a new class named `SpatialExperiment`.
+This class inherits from the popular Bioconductor class `SingleCellExperiment`
+and extend it with specific slots and get/set methods for spatial data.
+
+Here is a schematics of the organization of the `SpatialExperiment` class.
+![The SpatialExperiment class representation](https://github.com/drighelli/BIRSBIO2020.seqFISH.SpatialAnalysis/raw/master/inst/images/SpatialExperimentScheme.png)
+
+# References
