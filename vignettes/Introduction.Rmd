@@ -128,18 +128,18 @@ SpatialExperiment proper Methods:
 To reference class for this workshop is a devel version of the class, 
 You can use the Docker image simply by running:
 
-```{bash, eval=FALSE}
-docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop
-```
+<!-- ```{bash, eval=FALSE} -->
+<!-- docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop -->
+<!-- ``` -->
 
-Once docker command finished download and installation, navigate to [https://localhost:8787/](https://localhost:8787/) and then login with rstudio:<YourChosenPassword>.
+<!-- Once docker command finished download and installation, navigate to [https://localhost:8787/](https://localhost:8787/) and then login with rstudio:<YourChosenPassword>. -->
 
-Alternatively, you can install the devel version of the class with following commands:
+<!-- Alternatively, you can install the devel version of the class with following commands: -->
 
-```{r, eval=FALSE}
-library(remotes)
-install_github("drighelli/SpatialExperiment", ref="devel")
-```
+<!-- ```{r, eval=FALSE} -->
+<!-- library(remotes) -->
+<!-- install_github("drighelli/SpatialExperiment", ref="devel") -->
+<!-- ``` -->
 
 
 # Conclusions and Discussions
