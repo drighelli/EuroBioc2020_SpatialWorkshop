@@ -4,10 +4,10 @@ pkgdown_sha: ~
 articles:
   HOWTO_BUILD_WORKSHOP: HOWTO_BUILD_WORKSHOP.html
   Introduction1: Introduction1.html
-  SpaData1: SpaData1.html
+  STdata: STdata.html
   SpatialExperiment1: SpatialExperiment1.html
   workshop_example: workshop_example.html
-last_built: 2020-12-14T22:11Z
+last_built: 2020-12-14T23:25Z
 urls:
   reference: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/reference
   article: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/articles
