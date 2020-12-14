@@ -7,16 +7,16 @@ author:
 output: rmarkdown::html_vignette
 vignette: >
     %\VignetteIndexEntry{3. The `SpaData` package}
-    %\VignetteEngine{knitr::rmarkdown}
     %\VignetteEncoding{UTF-8}
+    %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
 library("STdata")
 library("ggspavis")
-library(STdata)
-library(ggspavis)
-library(SpatialExperiment)
+library("SpatialExperiment")
 spe <- load_data("human_DLPFC")
 spe
 dim(spe)
