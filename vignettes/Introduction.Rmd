@@ -11,11 +11,21 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+# Introduction
+
+Spatial organization of cells in tissues are well known to be particularly relevant
+to understand their functions, which are influenced by transcripts expression 
+and epigenomics factor.
+To unveil this relation, in the last years, multiple technologies are emerging
+to allow to extract this information.
+We refer to these technologies with Spatially Resolved Technologies, but during 
+this workshop we'll focus on Spatial Transcriptomics Technologies.
 
 # Spatial Transcriptomics Techonlogies
 
-With Spatial Transcriptomics (ST) we refer to all thosetechnologies which are able to **joint** 
-detect the **transcripts quantification** and their **spatial coordinates** into a reference tissue.
+With Spatial Transcriptomics (ST) we refer to all those technologies able to **joint** 
+detect **transcripts quantification** with their **spatial coordinates** into the
+under study tissue.
 
 At the moment, we distinguish two main families of ST, *molecular-based* and 
 *spot-based* technologies.
@@ -23,34 +33,97 @@ At the moment, we distinguish two main families of ST, *molecular-based* and
 ## Molecular-Based technologies
 
 The main idea of this technologies is to detect the transcripts locations in 
-a tissue in multiple temporal snapshots.
+a tissue in multiple temporal snapshots at cellular and sub-cellular level.
 
-Examples of this family are: seqFISH(+), MERFISH, others 
+Examples of this family are: seqFISH(+), MERFISH, others.
 
 Main differences within this family are due to the way of transcripts coordinates 
-detection and most important on the number of detected trascripts.
+are detected and the number of detected trascripts.
 
-### seqFISH(+)
+### The seqFISH(+) 
 
-seqFISH technology uses multiple temporal barcodes of transcripts hybridization rounds.
+seqFISH technology (Lubeck et al. 2014) uses multiple temporal barcodes of 
+transcripts hybridization rounds in combination with image microscopy and FISH approach.
+
+<br>
+
 This allows to detect the localization of the transcripts at each barcoded time.
 
+<br>
+
+<img src= "https://images.squarespace-cdn.com/content/v1/5a4ac56051a584ab2ccb89b0/1516120774943-7WPM1PIY31CZOCV7SGD6/ke17ZwdGBToddI8pDm48kBAGMl9lAFNwmUiPbCJ2eMkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcn-QjMN7HnL4Bymikkk2WTfFgLouyrutj2pCFluUg_HsXmCHOHkitiJoryoUeM1GK/seqFISH-Barcoding.PNG" alt="Hybridization seqFISH" width="500"/>
+
+<br>
+
+For each Barcode we have multiple hybridization rounds to colocalize transcripts.
+
+<br>
+
+<img src="https://images.squarespace-cdn.com/content/v1/5a4ac56051a584ab2ccb89b0/1516134310807-RMZ7EHRQP9Z13QPL21S4/ke17ZwdGBToddI8pDm48kNacjlcq_7nfuzlN6oepL9IUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc1sOXCvrBwV_7t32kh__lTviCsFUeUHYeUGwMyWpfSTHO-EhU1b7j_5Efn46yFIvZ/seqFISH-Single_Molecule_Sensitivity.PNG" alt="tissue snapshots" width="500">
+
+<br>
+
+This process can be directly applied on a tissue slice.
+
+<br>
+
+<img src="https://images.squarespace-cdn.com/content/v1/5a4ac56051a584ab2ccb89b0/1516127183330-JXQ47UO5EAS4D694WLDZ/ke17ZwdGBToddI8pDm48kPDOvGbVLEL9nOU6oZxVbzwUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dhxdRMEtDg5mXKZgN2Fd53Y5VUjyZdXk48oecIvq7S57CjLISwBs8eEdxAxTptZAUg/seqFISH_preserves_spatial_context_in_tissues.png" alt="tissue snapshots" width="500">
+
+<br>
+
 First version (seqFISH) of this technology allowed to detect undreads of transcripts,
-while second version (seqFISH+) allows to detect thousands of transcripts at each round
-which allows this technology to be comparable with a transcriptome 
+while second version (seqFISH+) (Eng et al. 2019)  allows to detect thousands of
+transcripts at each round which allows this technology to be comparable with a 
+whole transcriptome one.
+
+images ref: [seqFISH website](https://www.seqfish.com/technology)
+
+
+## Spot-Based technologies
+
+The main idea of this technology is to provide a uniquely identified (i.e. barcoded) 
+reference spot 
+
+
+### The 10x Genomics Visium Spatial Gene Expression
+
+
+
 
 
 # The SpatialExperiment class
 
-<img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/SpatialExpeirmentFusedV1.png" alt="The SpatialExperiment class" width="500"/>
-
-
 To facilitate the implementation of methodologies and the spatial data handling
-in R, we designed a new class named `SpatialExperiment`.
+in R, we designed a new class named [`SpatialExperiment`](https://bioconductor.org/packages/SpatialExperiment/).
 This class inherits from the popular Bioconductor class `SingleCellExperiment`
-and extend it with specific slots and get/set methods for spatial data.
+and extends it with specific slots and get/set methods for spatial data.
 
 Here is a schematics of the organization of the `SpatialExperiment` class.
 
+<img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/SpatialExpeirmentFusedV1.png" alt="The SpatialExperiment class" width="500"/>
+
+To reference class for this workshop is a devel version of the class, 
+You can use the Docker image simply by running:
+
+```{sh, eval=FALSE}
+docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop
+```
+
+Once docker command finished download and installation, navigate to [https://localhost:8787/](https://localhost:8787/) and then login with rstudio:<YourChosenPassword>.
+
+Alternatively, you can install the devel version of the class with following commands:
+
+```{r, eval=FALSE}
+library(remotes)
+install_github("drighelli/SpatialExperiment", ref="devel")
+```
+
+
+# Conclusions and Discussions
+
+
 
 # References
+- Lubeck, E., Coskun, A., Zhiyentayev, T. et al. Single-cell in situ RNA profiling by sequential hybridization. Nat Methods 11, 360–361 (2014). https://doi.org/10.1038/nmeth.2892
+
+- Eng, CH.L., Lawson, M., Zhu, Q. et al. Transcriptome-scale super-resolved imaging in tissues by RNA seqFISH+. Nature 568, 235–239 (2019). https://doi.org/10.1038/s41586-019-1049-y

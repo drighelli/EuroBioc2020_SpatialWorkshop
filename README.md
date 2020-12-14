@@ -33,10 +33,10 @@ privided tools during the sessions.
 - [Docker image](https://hub.docker.com/r/drighelli/eurobioc2020spatialworkshop)
 
 
-## To use the Dockers image:
+## To use the Docker image:
 
 ```sh
 docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop
 ```
 
-Once running, navigate to https://localhost:8787/ and then login with `rstudio`:`<ChosenPassword>`.
+Once running, navigate to https://localhost:8787/ and then login with `rstudio`:`<YourChosenPassword>`.
