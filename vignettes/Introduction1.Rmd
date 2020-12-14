@@ -14,7 +14,7 @@ vignette: >
 # Introduction
 
 Spatial organization of cells in tissues are well known to be particularly relevant
-to understand their functions, which are influenced by transcripts expression
+to understand their functions, which in turn are influenced by transcripts expression
 and epigenomics factor.
 To unveil this relation, in the last years, multiple technologies are emerging
 to allow to extract this information.
@@ -38,7 +38,7 @@ a tissue in multiple temporal snapshots at cellular and sub-cellular level.
 Examples of this family are: seqFISH(+), MERFISH, others.
 
 Main differences within this family are due to the way of transcripts coordinates
-are detected and the number of detected trascripts.
+are detected and the amount of detected trascripts.
 
 ### The seqFISH(+)
 
@@ -56,6 +56,8 @@ This allows to detect the localization of the transcripts at each barcoded time.
 <br>
 
 For each Barcode we have multiple hybridization rounds to colocalize transcripts.
+
+N.B. No cDNA or PCR amplification is needed with this technology.
 
 <br>
 
@@ -76,20 +78,41 @@ while second version (seqFISH+) (Eng et al. 2019)  allows to detect thousands of
 transcripts at each round which allows this technology to be comparable with a
 whole transcriptome one.
 
-images ref: [seqFISH website](https://www.seqfish.com/technology)
-
 
 ## Spot-Based technologies
 
-The main idea of this technology is to provide a uniquely identified (i.e. barcoded)
-reference spot
+The main idea of this technology is to provide uniquely identified (i.e. barcoded)
+reference spots with coordinates and transcripts abundance.
+Numer of cells in the spot depend on its size.
 
+Technology examples of this family are: 10x Visium Spatial Gene Expression, Slide-seq, others.
+
+Main differences within this family are due to spots size and the spots reference protocol.
 
 ### The 10x Genomics Visium Spatial Gene Expression
 
+This technology uses ad-hoc designed bacode-spots based chips where tissue slices 
+can be placed on.
 
+The number of spots is pre-defined, so we already know how many spots are on
+the rows and columns of the chip.
 
+Here is an example of a Mouse Brain tissue slice placed on a 10x Visium chip.
 
+<br>
+
+<img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/visium_tissue_lowres_image.png" alt="10x visium mouse brain" width="500"/>
+
+<br>
+
+While we take a snapshop in full resolution of the on-chip places tissue slice, 
+the unique barcoded-spots do cDNA amplification of the transcripts.
+
+In such a way at the end we have an image reference of the experiment and a whole
+transcriptome amplification per each spot.
+(Details about the experiment output will be given during the second part of
+this workshop by Helena and an example dataset will be provided during the 
+third part by Lukas.)
 
 # The SpatialExperiment class
 
@@ -106,24 +129,24 @@ Here is a schematics of the organization of the `SpatialExperiment` class.
 
 <br>
 
-The class is organized around the **assays** data structure:
+The class is organized around the **assays** data structure (more details in part 2):
 
 Attributes:
 
 * *assays*: contains the primary and/or transformed data (such as counts matrix)
-* *rowData*: information about the *assays rows*
-* *colData*: information about the *assays columns* and *spatial coordinates*
+* *rowData*: information about the assays rows*
+* *colData*: information about the assays columns* and *spatial coordinates*
 * *reducedDims*: dimention reductions representations (such as PCA/tSNE/UMAP)
 * *imgData*: samples related images.
 
 SpatialExperiment proper Methods:
 
 * *spatialCoords*: returns/sets the spatial coordinates
-* *spatialCoordsMtx*: returns the spatial coordinate (\code{x_coord} and \code{y_coord}) in matrix form.
-* *imgData*:
-* *loadImg, unloadImg, addImg, removeImg*: \code{imgData} handling methods
-* *isInTissue*:
-* *spatialCoordsNames*:
+* *spatialCoordsMtx*: returns the spatial coordinate (x_coord and y_coord) in matrix form.
+* *imgData*: gets/sets the imgData
+* *loadImg, unloadImg, addImg, removeImg*: imgData handling methods 
+* *isInTissue*: returns a boolean of inTissue spots
+* *spatialCoordsNames*: returns the name of stored spatial coordinates 
 
 To reference class for this workshop is a devel version of the class,
 You can use the Docker image simply by running:
@@ -138,10 +161,42 @@ Alternatively, you can install the devel version of the class with following com
 
 ```{r eval=FALSE}
 library(remotes)
-install_github("drighelli/SpatialExperiment", ref="devel"
+install_github("drighelli/SpatialExperiment", ref="devel")
 ```
 
-# Conclusions and Discussions
+# In short
+
+We provided a main overview of Spatial Transcriptomics technologies, focusing on 
+seqFISH for the molecule-based family and on 10x Genomics Visium Spatial Expression
+for the spot-based ones.
+
+We setup a class for spatial data analysis at single cell/spot level providing ad-hoc
+attributes and specifically designed methods for attributes managing.
+
+This latest version of the class is still under development even it's already usable.
+
+
+# Extra Resources 
+
+If you're interested in a seqFISH dataset you can retrive it from the 
+[**SingleCellMultiModal** Bioconductor](https://bioconductor.org/packages/SpatialExperiment/) package.
+It is a multimodal dataset providing data for *seqFISH* and *scRNAseq* data,
+these datasets can be combined for multimodal single cell data integration methods
+developments, testing and/or analysis.
+More details about an investigation of these datasets can be found at this [link](https://drighelli.github.io/BIRSBIO2020.seqFISH.SpatialAnalysis/articles/seqFISH.html).
+
+Or you can run:
+
+```{r eval=FALSE}
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("SingleCellMultiModal")
+
+library(SingleCellMultiModal)
+vignette("seqFISH", package="SingleCellMultiModal")
+
+```
 
 
 
@@ -149,3 +204,7 @@ install_github("drighelli/SpatialExperiment", ref="devel"
 - Lubeck, E., Coskun, A., Zhiyentayev, T. et al. Single-cell in situ RNA profiling by sequential hybridization. Nat Methods 11, 360–361 (2014). https://doi.org/10.1038/nmeth.2892
 
 - Eng, CH.L., Lawson, M., Zhu, Q. et al. Transcriptome-scale super-resolved imaging in tissues by RNA seqFISH+. Nature 568, 235–239 (2019). https://doi.org/10.1038/s41586-019-1049-y
+
+- seqFISH reference website: [https://www.seqfish.com/technology](https://www.seqfish.com/technology)
+
+- 10x Genomics Visium Spatial Gene Expression website [https://www.10xgenomics.com/products/spatial-gene-expression](https://www.10xgenomics.com/products/spatial-gene-expression)
