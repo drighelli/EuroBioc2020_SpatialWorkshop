@@ -1,9 +1,9 @@
 ---
 title: "1. Introduction to Spatial Transcriptomics"
 author: 
-  - name: Dario Righelli^[dario.righelli@gmail.com]
-    affiliation: Department of Statistical Sciences, University of Padova, Padua, Italy
-    email: dario.righelli@unipd.it
+    - name: "Dario Righelli"
+      affiliation: "Department of Statistical Sciences, University of Padova, Padua, Italy"
+      email: "dario.righelli@unipd.it"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{1. Introduction to Spatial Transcriptomics}
@@ -14,13 +14,35 @@ vignette: >
 
 # Spatial Transcriptomics Techonlogies
 
-With Spatial Transcriptomics we refer to all thosetechnologies which are able to joint 
-detect the transcripts quantification and their spatial coordinates into a reference tissue.
+With Spatial Transcriptomics (ST) we refer to all thosetechnologies which are able to **joint** 
+detect the **transcripts quantification** and their **spatial coordinates** into a reference tissue.
+
+At the moment, we distinguish two main families of ST, *molecular-based* and 
+*spot-based* technologies.
+
+## Molecular-Based technologies
+
+The main idea of this technologies is to detect the transcripts locations in 
+a tissue in multiple temporal snapshots.
+
+Examples of this family are: seqFISH(+), MERFISH, others 
+
+Main differences within this family are due to the way of transcripts coordinates 
+detection and most important on the number of detected trascripts.
+
+### seqFISH(+)
+
+seqFISH technology uses multiple temporal barcodes of transcripts hybridization rounds.
+This allows to detect the localization of the transcripts at each barcoded time.
+
+First version (seqFISH) of this technology allowed to detect undreads of transcripts,
+while second version (seqFISH+) allows to detect thousands of transcripts at each round
+which allows this technology to be comparable with a transcriptome 
 
 
 # The SpatialExperiment class
 
-![The SpatialExperiment class](https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/images/SpatialExperimentFusedV1.png)
+<img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/SpatialExpeirmentFusedV1.png" alt="The SpatialExperiment class" width="500"/>
 
 
 To facilitate the implementation of methodologies and the spatial data handling
@@ -29,6 +51,6 @@ This class inherits from the popular Bioconductor class `SingleCellExperiment`
 and extend it with specific slots and get/set methods for spatial data.
 
 Here is a schematics of the organization of the `SpatialExperiment` class.
-![The SpatialExperiment class representation](https://github.com/drighelli/BIRSBIO2020.seqFISH.SpatialAnalysis/raw/master/inst/images/SpatialExperimentScheme.png)
+
 
 # References
