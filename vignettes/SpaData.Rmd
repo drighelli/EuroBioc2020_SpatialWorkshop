@@ -6,9 +6,9 @@ author:
     email: lukas.weber@jhu.edu
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{1. The `SpaData` package}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{3. The `SpaData` package}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
 ---
 
 
