@@ -19,30 +19,30 @@ library(SpatialExperiment)
 
 # Reading 10X Visium data
 
-The 10X Genomics' *CellRanger* pipeline will process data using standard output file formats that are saved, for each sample, in a single directory `/<sample>/outs/` of the following structure: 
+The 10X Genomics' *CellRanger* pipeline will process data using standard output file formats that are saved, for each sample, in a single directory `/<sample>/outs/` of the following structure:
 
 ```{bash eval = FALSE}
-sample 
+sample
 |—outs 
-··|—raw/filtered_feature_bc_matrix.h5 
-··|—raw/filtered_feature_bc_matrix 
-····|—barcodes.tsv 
-····|—features.tsv 
-····|—matrix.mtx 
-··|—spatial 
-····|—tissue_hires_image.png 
-····|—tissue_lowres_image.png 
+··|—raw/filtered_feature_bc_matrix.h5
+··|—raw/filtered_feature_bc_matrix
+····|—barcodes.tsv
+····|—features.tsv
+····|—matrix.mtx
+··|—spatial
+····|—tissue_hires_image.png
+····|—tissue_lowres_image.png
 ····|—detected_tissue_image.jpg
 ····|—aligned_fiducials.jpg
-····|—scalefactors_json.json 
-····|—tissue_positions_list.csv 
+····|—scalefactors_json.json
+····|—tissue_positions_list.csv
 ```
 
 The `SpatialExperiment` package provides an exemplary 10X Visium spatial gene expression data of two serial mouse brain sections (Sagittal-Posterior) available from the [10X Genomics website](https://support.10xgenomics.com/spatial-gene-expression/datasets). These are located in the `extdata/10xVisium` directory:
 
 ```{r}
 dir <- system.file(
-  file.path("extdata", "10xVisium"), 
+  file.path("extdata", "10xVisium"),
   package = "SpatialExperiment")
 
 sample_ids <- c("section1", "section2")
@@ -76,13 +76,13 @@ Spatial data are stored as observation metadata (`colData`) and include:
 [^1]: `array_row`s range from 0-77 (78 rows); `array_col`s are even in 0-126 for even rows, and odd in 1-127 for odd rows (64 columns), giving in $78 \times 64 = 4,992$ spots per sample.
 
 A `DataFrame` of spatially-related data can be accessed using the `spatialCoords()` accessor:
-    
+
     ```{r}
 head(spatialCoords(ve))
 ```
 
 Alternatively, we can access these data using `colData()` or, even simpler, the `$` accessor:
-    
+
     ```{r}
 # tabulate number of spots mapped to tissue
 table(
@@ -97,7 +97,7 @@ Image-related data are stored in the `int_metadata`'s `imgData` field as a `Data
 * `sample_id` and `image_id` specifying the image's sample and image identifier
 * `data`: a list of `SpatialImage`s containing the image's `grob`, path and/or URL
 * `width` and `height` giving the image's dimension (in pixel)
-* `scaleFactor` used to rescale spatial coordinates according to the image's resolution 
+* `scaleFactor` used to rescale spatial coordinates according to the image's resolution
 
 We can retrieve these data using the `imgData()` accessor:
 
@@ -107,9 +107,9 @@ imgData(ve)
 
 # The `SpatialImage` class
 
-Images inside a `SpatialExperiment`'s `imgData` are stored as objects of class `SpatialImage`. These contain three slots that can accommodate any available information associated with an image: 
-    
-    * `@grob`: NULL or an object class `rastergrob` from the `grid` package 
+Images inside a `SpatialExperiment`'s `imgData` are stored as objects of class `SpatialImage`. These contain three slots that can accommodate any available information associated with an image:
+
+    * `@grob`: NULL or an object class `rastergrob` from the `grid` package
 * `@path`: NULL or a character strings specifying an image file name (.png, .jpg or .tif)
 * `@url`: NULL or a character string specifying an URL from which to retrieve the image
 
@@ -128,14 +128,14 @@ imgPath(si)
 imgUrl(si)
 ```
 
-`grob`s can be used directly for plotting (e.g. using `grid.draw()` or `ggplot2`'s `layer()` and `annotation_custom()`): 
-    
+`grob`s can be used directly for plotting (e.g. using `grid.draw()` or `ggplot2`'s `layer()` and `annotation_custom()`):
+
     ```{r fig.small = TRUE}
 si <- imgData(ve)$data[[1]]
 grid.draw(imgGrob(si))
 ```
 
-`path` and `url` provide the option to store an image's source at minimal storage cost. This is desirable when multiple images are to be stored (say, for many samples and of different resolutions), or when a `SpatialExperiment` is to be exported. 
+`path` and `url` provide the option to store an image's source at minimal storage cost. This is desirable when multiple images are to be stored (say, for many samples and of different resolutions), or when a `SpatialExperiment` is to be exported.
 
 # Methods for image handling
 
@@ -148,7 +148,7 @@ The `SpatialExperiment` package provides various functions to handle which and h
 
 ## Loading & unloading images
 
-`loadImg()` and `add/removeImg()` are flexible in the specification of the `sample/image_id` arguments. Specifically, 
+`loadImg()` and `add/removeImg()` are flexible in the specification of the `sample/image_id` arguments. Specifically,
 
 - `TRUE` is equivalent to *all*, e.g. `sample_id = "<sample>", image_id = TRUE` will drop all images for a given sample.
 - `NULL` defaults to the first entry available, e.g., `sample_id = "<sample>", image_id = NULL` will drop the first image for a given sample.
@@ -175,7 +175,7 @@ Besides a path or URL to source the image from and a numeric scale factor, `addI
 
 ```{r fig.small=TRUE}
 url <- "https://i.redd.it/3pw5uah7xo041.jpg"
-ve <- addImg(ve, 
+ve <- addImg(ve,
   sample_id = "section1", image_id = "pomeranian",
   imageSource = url, scaleFactor = NA_real_, load = TRUE)
 ```
@@ -186,17 +186,17 @@ imgData(ve)
 ```
 
 ```{r fig.small=TRUE}
-grb <- imgGrob(ve, 
-               sample_id = "section1", 
+grb <- imgGrob(ve,
+               sample_id = "section1",
                image_id = "pomeranian")
 grid.draw(grb)
 ```
 
 We can remove specific images with `removeImg()`:
-    
+
     ```{r}
-ve <- removeImg(ve, 
-                sample_id = "section1", 
+ve <- removeImg(ve,
+                sample_id = "section1",
                 image_id = "pomeranian")
 imgData(ve)
 ```
@@ -212,7 +212,7 @@ i <- grep("x|y_coord", names(colData(ve)))
 names(colData(ve))[i] <- "foo"
 ```
 
-Replacement of `sample_id`s is permitted provided that 
+Replacement of `sample_id`s is permitted provided that
 
 i. the number of unique sample identifiers is retained
 ii. newly provided sample identifiers are a one-to-one mapping
@@ -223,7 +223,7 @@ ve$sample_id <- sample(c("a", "b"), ncol(ve), TRUE)
 ```
 
 Valid replacement will be propagated to the `imgData`:
-  
+
 ```{r}
 tmp <- ve
 i <- as.numeric(factor(ve$sample_id))
@@ -247,4 +247,3 @@ names(colData(ve))
 ```
 
 # Visualization
-

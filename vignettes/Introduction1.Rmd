@@ -1,48 +1,48 @@
 ---
 title: "1. Introduction to Spatial Transcriptomics"
-author: 
+author:
     - name: "Dario Righelli"
       affiliation: "Department of Statistical Sciences, University of Padova, Padua, Italy"
       email: "dario.righelli@unipd.it"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{1. Introduction to Spatial Transcriptomics}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{1. Introduction to Spatial Transcriptomics}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
 ---
 
 # Introduction
 
 Spatial organization of cells in tissues are well known to be particularly relevant
-to understand their functions, which are influenced by transcripts expression 
+to understand their functions, which are influenced by transcripts expression
 and epigenomics factor.
 To unveil this relation, in the last years, multiple technologies are emerging
 to allow to extract this information.
-We refer to these technologies with Spatially Resolved Technologies, but during 
+We refer to these technologies with Spatially Resolved Technologies, but during
 this workshop we'll focus on Spatial Transcriptomics Technologies.
 
 # Spatial Transcriptomics Techonlogies
 
-With Spatial Transcriptomics (ST) we refer to all those technologies able to **joint** 
+With Spatial Transcriptomics (ST) we refer to all those technologies able to **joint**
 detect **transcripts quantification** with their **spatial coordinates** into the
 under study tissue.
 
-At the moment, we distinguish two main families of ST, *molecular-based* and 
+At the moment, we distinguish two main families of ST, *molecular-based* and
 *spot-based* technologies.
 
 ## Molecular-Based technologies
 
-The main idea of this technologies is to detect the transcripts locations in 
+The main idea of this technologies is to detect the transcripts locations in
 a tissue in multiple temporal snapshots at cellular and sub-cellular level.
 
 Examples of this family are: seqFISH(+), MERFISH, others.
 
-Main differences within this family are due to the way of transcripts coordinates 
+Main differences within this family are due to the way of transcripts coordinates
 are detected and the number of detected trascripts.
 
-### The seqFISH(+) 
+### The seqFISH(+)
 
-seqFISH technology (Lubeck et al. 2014) uses multiple temporal barcodes of 
+seqFISH technology (Lubeck et al. 2014) uses multiple temporal barcodes of
 transcripts hybridization rounds in combination with image microscopy and FISH approach.
 
 <br>
@@ -73,7 +73,7 @@ This process can be directly applied on a tissue slice.
 
 First version (seqFISH) of this technology allowed to detect undreads of transcripts,
 while second version (seqFISH+) (Eng et al. 2019)  allows to detect thousands of
-transcripts at each round which allows this technology to be comparable with a 
+transcripts at each round which allows this technology to be comparable with a
 whole transcriptome one.
 
 images ref: [seqFISH website](https://www.seqfish.com/technology)
@@ -81,8 +81,8 @@ images ref: [seqFISH website](https://www.seqfish.com/technology)
 
 ## Spot-Based technologies
 
-The main idea of this technology is to provide a uniquely identified (i.e. barcoded) 
-reference spot 
+The main idea of this technology is to provide a uniquely identified (i.e. barcoded)
+reference spot
 
 
 ### The 10x Genomics Visium Spatial Gene Expression
@@ -120,27 +120,26 @@ SpatialExperiment proper Methods:
 
 * *spatialCoords*: returns/sets the spatial coordinates
 * *spatialCoordsMtx*: returns the spatial coordinate (\code{x_coord} and \code{y_coord}) in matrix form.
-* *imgData*: 
+* *imgData*:
 * *loadImg, unloadImg, addImg, removeImg*: \code{imgData} handling methods
 * *isInTissue*:
 * *spatialCoordsNames*:
 
-To reference class for this workshop is a devel version of the class, 
+To reference class for this workshop is a devel version of the class,
 You can use the Docker image simply by running:
 
-<!-- ```{bash, eval=FALSE} -->
-<!-- docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop -->
-<!-- ``` -->
+```{bash eval=FALSE}
+docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop
+```
 
-<!-- Once docker command finished download and installation, navigate to [https://localhost:8787/](https://localhost:8787/) and then login with rstudio:<YourChosenPassword>. -->
+Once docker command finished download and installation, navigate to [https://localhost:8787/](https://localhost:8787/) and then login with rstudio:<YourChosenPassword>.
 
-<!-- Alternatively, you can install the devel version of the class with following commands: -->
+Alternatively, you can install the devel version of the class with following commands:
 
-<!-- ```{r, eval=FALSE} -->
-<!-- library(remotes) -->
-<!-- install_github("drighelli/SpatialExperiment", ref="devel") -->
-<!-- ``` -->
-
+```{r eval=FALSE}
+library(remotes)
+install_github("drighelli/SpatialExperiment", ref="devel"
+```
 
 # Conclusions and Discussions
 
