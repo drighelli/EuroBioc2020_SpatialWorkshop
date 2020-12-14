@@ -13,20 +13,20 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r}
-library("STdata")
-library("ggspavis")
-library("SpatialExperiment")
-spe <- load_data("human_DLPFC")
-spe
-dim(spe)
-assayNames(spe)
-colData(spe)
-rowData(spe)
-spatialCoords(spe)
-#plotSpots(spe)
-#plotSpots(spe, discrete = "ground_truth", palette = "libd_layer_colors")
-colData(spe)
-colData(spe)$sum <- colSums(counts(spe))
-#plotSpots(spe, continuous = "sum", palette = "navy")
-```
+<!-- ```{r} -->
+<!-- library("STdata") -->
+<!-- library("ggspavis") -->
+<!-- library("SpatialExperiment") -->
+<!-- spe <- load_data("human_DLPFC") -->
+<!-- spe -->
+<!-- dim(spe) -->
+<!-- assayNames(spe) -->
+<!-- colData(spe) -->
+<!-- rowData(spe) -->
+<!-- spatialCoords(spe) -->
+<!-- #plotSpots(spe) -->
+<!-- #plotSpots(spe, discrete = "ground_truth", palette = "libd_layer_colors") -->
+<!-- colData(spe) -->
+<!-- colData(spe)$sum <- colSums(counts(spe)) -->
+<!-- #plotSpots(spe, continuous = "sum", palette = "navy") -->
+<!-- ``` -->
