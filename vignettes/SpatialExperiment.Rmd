@@ -1,20 +1,20 @@
 ---
-title: "2. The `SpatialExperiment` class"
+    title: "2. The `SpatialExperiment` class"
 author: 
-  - name: Helena L. Crowell
-    affiliation: Department of Molecular Life Sciences, University of Zurich, Zurich, Switzerland
-    email: helena.crowell@uzh.ch
+    - name: Helena L. Crowell
+affiliation: Department of Molecular Life Sciences, University of Zurich, Zurich, Switzerland
+email: helena.crowell@uzh.ch
 output: 
-  html_document:
+    html_document:
     toc: true
-    toc_float: true
+toc_float: true
 vignette: >
-  %\VignetteIndexEntry{1. The `SpatialExperiment` class}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{1. The `SpatialExperiment` class}
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteEncoding{UTF-8}
 ---
-
-```{r message = FALSE, warning = FALSE}
+    
+    ```{r message = FALSE, warning = FALSE}
 library(ggplot2)
 library(grid)
 library(SpatialExperiment)
@@ -79,18 +79,18 @@ Spatial data are stored as observation metadata (`colData`) and include:
 [^1]: `array_row`s range from 0-77 (78 rows); `array_col`s are even in 0-126 for even rows, and odd in 1-127 for odd rows (64 columns), giving in $78 \times 64 = 4,992$ spots per sample.
 
 A `DataFrame` of spatially-related data can be accessed using the `spatialCoords()` accessor:
-
-```{r}
+    
+    ```{r}
 head(spatialCoords(ve))
 ```
 
 Alternatively, we can access these data using `colData()` or, even simpler, the `$` accessor:
-
-```{r}
+    
+    ```{r}
 # tabulate number of spots mapped to tissue
 table(
-  in_tissue = ve$in_tissue,
-  sample_id = ve$sample_id)
+    in_tissue = ve$in_tissue,
+    sample_id = ve$sample_id)
 ```
 
 ## Image data
@@ -111,8 +111,8 @@ imgData(ve)
 # The `SpatialImage` class
 
 Images inside a `SpatialExperiment`'s `imgData` are stored as objects of class `SpatialImage`. These contain three slots that can accommodate any available information associated with an image: 
-
-* `@grob`: NULL or an object class `rastergrob` from the `grid` package 
+    
+    * `@grob`: NULL or an object class `rastergrob` from the `grid` package 
 * `@path`: NULL or a character strings specifying an image file name (.png, .jpg or .tif)
 * `@url`: NULL or a character string specifying an URL from which to retrieve the image
 
@@ -132,8 +132,8 @@ imgUrl(si)
 ```
 
 `grob`s can be used directly for plotting (e.g. using `grid.draw()` or `ggplot2`'s `layer()` and `annotation_custom()`): 
-
-```{r fig.small = TRUE}
+    
+    ```{r fig.small = TRUE}
 si <- imgData(ve)$data[[1]]
 grid.draw(imgGrob(si))
 ```
@@ -184,23 +184,23 @@ ve <- addImg(ve,
 ```
 
 The above code chunk has added an new image entry in the input `SpatialExperiment`'s `imgData` field:
-```{r}
+    ```{r}
 imgData(ve)
 ```
 
 ```{r fig.small=TRUE}
 grb <- imgGrob(ve, 
-  sample_id = "section1", 
-  image_id = "pomeranian")
+               sample_id = "section1", 
+               image_id = "pomeranian")
 grid.draw(grb)
 ```
 
 We can remove specific images with `removeImg()`:
-
-```{r}
+    
+    ```{r}
 ve <- removeImg(ve, 
-  sample_id = "section1", 
-  image_id = "pomeranian")
+                sample_id = "section1", 
+                image_id = "pomeranian")
 imgData(ve)
 ```
 
