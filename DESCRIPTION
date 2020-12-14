@@ -69,8 +69,8 @@ Suggests:
     pkgdown
 Remotes:
     drighelli/SpatialExperiment@devel,
-    lmweber/STdata,
-    lmweber/ggspavis
+    lmweber/STdata@main,
+    lmweber/ggspavis@main
 URL: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
 BugReports: https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/issues/new/
 VignetteBuilder: knitr
