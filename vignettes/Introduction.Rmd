@@ -100,12 +100,35 @@ and extends it with specific slots and get/set methods for spatial data.
 
 Here is a schematics of the organization of the `SpatialExperiment` class.
 
+<br>
+
 <img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/SpatialExpeirmentFusedV1.png" alt="The SpatialExperiment class" width="500"/>
+
+<br>
+
+The class is organized around the **assays** data structure:
+
+Attributes:
+
+* *assays*: contains the primary and/or transformed data (such as counts matrix)
+* *rowData*: information about the *assays rows*
+* *colData*: information about the *assays columns* and *spatial coordinates*
+* *reducedDims*: dimention reductions representations (such as PCA/tSNE/UMAP)
+* *imgData*: samples related images.
+
+SpatialExperiment proper Methods:
+
+* *spatialCoords*: returns/sets the spatial coordinates
+* *spatialCoordsMtx*: returns the spatial coordinate (\code{x_coord} and \code{y_coord}) in matrix form.
+* *imgData*: 
+* *loadImg, unloadImg, addImg, removeImg*: \code{imgData} handling methods
+* *isInTissue*:
+* *spatialCoordsNames*:
 
 To reference class for this workshop is a devel version of the class, 
 You can use the Docker image simply by running:
 
-```{sh, eval=FALSE}
+```{bash, eval=FALSE}
 docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop
 ```
 
