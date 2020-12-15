@@ -61,16 +61,15 @@ RoxygenNote: 7.1.0
 Depends: 
     Biobase,
     grid,
-    ggplot2,
-    SpatialExperiment
+    ggplot2
 Suggests: 
     knitr,
     rmarkdown,
     pkgdown
 Remotes:
-    lmweber/STdata@main,
+    drighelli/STdata@main,
     drighelli/SpatialExperiment@devel,
-    lmweber/ggspavis@main
+    drighelli/ggspavis@main
 URL: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
 BugReports: https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/issues/new/
 VignetteBuilder: knitr
