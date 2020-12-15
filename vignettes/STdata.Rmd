@@ -93,7 +93,7 @@ Then, we load the package, and create a plot.
 library(ggspavis)
 ```
 
-```{r, message=FALSE, out.width="60%"}
+```{r, message=FALSE, out.width="65%"}
 # create plot
 plotSpots(spe)
 ```
@@ -117,7 +117,7 @@ spe <- load_data("human_DLPFC")
 plotSpots(spe)
 ```
 
-```{r, message=FALSE, out.width="75%"}
+```{r, message=FALSE, out.width="70%"}
 # create plot showing ground truth cluster labels
 plotSpots(spe, discrete = "ground_truth", palette = "libd_layer_colors")
 ```
