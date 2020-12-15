@@ -62,6 +62,10 @@ Depends:
     Biobase,
     grid,
     ggplot2
+Imports:
+    SpatialExperiment,
+    STdata,
+    ggspavis
 Suggests: 
     knitr,
     rmarkdown,
