@@ -2,12 +2,10 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  HOWTO_BUILD_WORKSHOP: HOWTO_BUILD_WORKSHOP.html
-  Introduction1: Introduction1.html
+  Introduction: Introduction.html
   STdata: STdata.html
-  SpatialExperiment1: SpatialExperiment1.html
-  workshop_example: workshop_example.html
-last_built: 2020-12-15T16:12Z
+  SpatialExperiment: SpatialExperiment.html
+last_built: 2020-12-15T18:42Z
 urls:
   reference: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/reference
   article: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/articles
