@@ -1,12 +1,12 @@
 ---
-title: "3. `STdata` package"
+title: "3. The STdata package"
 author:
   - name: "Lukas M. Weber"
     affiliation: "Johns Hopkins Bloomberg School of Public Health, Baltimore, USA"
     email: "lukas.weber@jhu.edu"
 output: rmarkdown::html_vignette
 vignette: >
-    %\VignetteIndexEntry{3. `STdata` package}
+    %\VignetteIndexEntry{3. The STdata package}
     %\VignetteEncoding{UTF-8}
     %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
