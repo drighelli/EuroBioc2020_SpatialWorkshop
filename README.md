@@ -3,27 +3,27 @@
 
 
 This workshop is divided in three parts where we provide an overview
-of the most spreaded technologies for Spatial Transcriptomics, such as seqFISH
-and 10x Visium Spatial Gene Expression and main differences between them.
-Then we'll provide details about the SpatialExperiment class and how to handle
-its methods to store and retrive spatial coordinates, images and how to manage them.
-Finally, we'll show how to store/retrieve already stored data from a pre-defined
-repository and how to contribute to it.
+of the most widely used technologies for spatially resolved transcriptomics, such as seqFISH
+and 10x Genomics Visium, and the main differences between them.
+Then we will provide details about the SpatialExperiment class and how to handle
+its methods to store and retrieve spatial coordinates, images, and how to manage them.
+Finally, we will show how to store/retrieve already stored data from a pre-defined
+repository and how to generate plots.
 
 The workshop will end with a mini-challenge for the attendees to handle with the
-privided tools during the sessions.
+provided tools during the sessions.
 
 # Authors:
 
 - [Dario Righelli](github.com/drighelli) (dario.righelli@gmail.com)
 - [Helena L. Crowell](github.com/HelenaLC) (helena.crowell@uzh.ch)
-- [Lukas M. Weber](github.com/lmweber) (lukas.weber@jhu.edu)
+- [Lukas M. Weber](https://lmweber.org/) (lukas.weber@jhu.edu)
 
 
 # Pre-requisites
 
 - Basic R syntax knowledge and R data structures
-- Familiarity with [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/) and/or [SummarizeExperiment](https://bioconductor.org/packages/SummarizedExperiment/) classes 
+- Familiarity with [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/) and/or [SummarizedExperiment](https://bioconductor.org/packages/SummarizedExperiment/) classes 
 
 
 
