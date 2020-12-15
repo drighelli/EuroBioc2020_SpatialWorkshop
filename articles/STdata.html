@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3. The STdata package • EuroBioc2020SpatialExperimentWorkshop</title>
+<title>3. `STdata` package • EuroBioc2020SpatialExperimentWorkshop</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/simplex/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="3. The STdata package">
+<script src="../pkgdown.js"></script><meta property="og:title" content="3. `STdata` package">
 <meta property="og:description" content="EuroBioc2020SpatialExperimentWorkshop">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -66,7 +66,7 @@
       <a href="../articles/Introduction1.html">1. Introduction to Spatial Transcriptomics</a>
     </li>
     <li>
-      <a href="../articles/STdata.html">3. The STdata package</a>
+      <a href="../articles/STdata.html">3. `STdata` package</a>
     </li>
     <li>
       <a href="../articles/SpatialExperiment1.html">2. The `SpatialExperiment` class</a>
@@ -97,7 +97,7 @@
       </header><script src="STdata_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>3. The STdata package</h1>
+      <h1 data-toc-skip>3. <code>STdata</code> package</h1>
                         <h4 class="author">Lukas M. Weber</h4>
             <address class="author_afil">
       Johns Hopkins Bloomberg School of Public Health, Baltimore, USA<br><a class="author_email" href="mailto:#"></a><a href="mailto:lukas.weber@jhu.edu" class="email">lukas.weber@jhu.edu</a>
@@ -111,30 +111,189 @@
 
     
     
-<p>The <a href="https://github.com/lmweber/STdata">STdata package</a> (under development) contains a collection of spatially resolved transcriptomics datasets, formatted into <a href="https://github.com/drighelli/SpatialExperiment">SpatialExperiment</a> objects.</p>
-<p>Example:</p>
-<!-- ```{r} -->
-<!-- library("STdata") -->
-<!-- library("ggspavis") -->
-<!-- library("SpatialExperiment") -->
-<!-- spe <- load_data("human_DLPFC") -->
-<!-- spe -->
-<!-- dim(spe) -->
-<!-- assayNames(spe) -->
-<!-- colData(spe) -->
-<!-- rowData(spe) -->
-<!-- spatialCoords(spe) -->
-<!-- #plotSpots(spe) -->
-<!-- #plotSpots(spe, discrete = "ground_truth", palette = "libd_layer_colors") -->
-<!-- colData(spe) -->
-<!-- colData(spe)$sum <- colSums(counts(spe)) -->
-<!-- #plotSpots(spe, continuous = "sum", palette = "navy") -->
-<!-- ``` -->
+<div id="stdata-package" class="section level1">
+<h1 class="hasAnchor">
+<a href="#stdata-package" class="anchor"></a>STdata package</h1>
+<p>The <a href="https://github.com/lmweber/STdata">STdata</a> package provides access to a collection of spatially resolved transcriptomics datasets, which have been formatted into the <a href="https://bioconductor.org/packages/SpatialExperiment">SpatialExperiment</a> Bioconductor object class.</p>
+<p>These datasets have been collected from various publicly available sources, and will cover several technological platforms.</p>
+<p>We provide these datasets as <code>SpatialExperiment</code> objects to make them easier to access, so that we and others can use them for examples, demonstrations, tutorials, and other purposes.</p>
+</div>
+<div id="datasets" class="section level1">
+<h1 class="hasAnchor">
+<a href="#datasets" class="anchor"></a>Datasets</h1>
+<p>The current version of the package contains the following datasets, both from the 10x Genomics Visium platform.</p>
+<p>The package is under active development, and we will add several additional datasets in the near future (see also Challenges discussed at Birds-of-a-Feather workshop).</p>
+<ul>
+<li><p><code>mouse_coronal</code> (10x Genomics Visium): a single coronal section from the mouse brain, spanning one hemisphere. Previously provided by 10x Genomics from their <a href="https://support.10xgenomics.com/spatial-gene-expression/datasets/1.1.0/V1_Adult_Mouse_Brain">website</a>.</p></li>
+<li><p><code>human_DLPFC</code> (10x Genomics Visium): a single sample (sample 151673) from our previously published dataset consisting of 12 samples from the human dorsolateral prefrontal cortex (DLPFC) in the human brain, from 3 neurotypical donors. The original dataset is available via the <a href="http://bioconductor.org/packages/spatialLIBD">spatialLIBD</a> Bioconductor package, and is described in our paper <a href="https://www.biorxiv.org/content/10.1101/2020.02.28.969931v1">Maynard and Collado-Torres et al. 2020</a>.</p></li>
+</ul>
+</div>
+<div id="install-package" class="section level1">
+<h1 class="hasAnchor">
+<a href="#install-package" class="anchor"></a>Install package</h1>
+<p>The latest versions of the <code>SpatialExperiment</code> and <code>STdata</code> packages can be installed from GitHub. These will be moved to Bioconductor (devel) in the near future.</p>
+<p>In the code below, we have commented out the installation code, so that this is not automatically run when we compile the workshop materials. However, on your own system, you can un-comment these lines and run them to install the packages if necessary.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install SpatialExperiment package (note "devel" branch)</span>
+<span class="co"># remotes::install_github("drighelli/SpatialExperiment", ref = "devel")</span>
+
+<span class="co"># install STdata package</span>
+<span class="co"># remotes::install_github("lmweber/STdata")</span></code></pre></div>
+</div>
+<div id="load-data" class="section level1">
+<h1 class="hasAnchor">
+<a href="#load-data" class="anchor"></a>Load data</h1>
+<p>Next, we run a short example showing how to load one of the datasets from the <code>STdata</code> package. This will be loaded as a <code>SpatialExperiment</code> object. Then, we inspect the object dimensions and structure.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># load packages</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">SpatialExperiment</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lmweber/STdata">STdata</a></span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># load data object</span>
+<span class="va">spe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/STdata/man/load_data.html">load_data</a></span><span class="op">(</span><span class="st">"mouse_coronal"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># inspect data object</span>
+<span class="va">spe</span></code></pre></div>
+<pre><code>## class: SpatialExperiment 
+## dim: 32285 2702 
+## metadata(0):
+## assays(1): counts
+## rownames(32285): ENSMUSG00000051951 ENSMUSG00000089699 ...
+##   ENSMUSG00000095019 ENSMUSG00000095041
+## rowData names(3): gene_id gene_name feature_type
+## colnames(2702): AAACAAGTATCTCCCA-1 AAACAATCTACTAGCA-1 ...
+##   TTGTTTCCATACAACT-1 TTGTTTGTGTAAATTC-1
+## colData names(9): barcode_id array_row ... y_coord in_tissue
+## reducedDimNames(0):
+## altExpNames(0):
+## spatialCoordsNames(3) : x_coord y_coord in_tissue
+## inTissue(1): 2702
+## imgData(6): sample_id image_id ... height scaleFactor</code></pre>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 32285  2702</code></pre>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">assayNames</span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "counts"</code></pre>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">rowData</span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<pre><code>## DataFrame with 32285 rows and 3 columns
+##                               gene_id   gene_name    feature_type
+##                           &lt;character&gt; &lt;character&gt;     &lt;character&gt;
+## ENSMUSG00000051951 ENSMUSG00000051951        Xkr4 Gene Expression
+## ENSMUSG00000089699 ENSMUSG00000089699      Gm1992 Gene Expression
+## ENSMUSG00000102331 ENSMUSG00000102331     Gm19938 Gene Expression
+## ENSMUSG00000102343 ENSMUSG00000102343     Gm37381 Gene Expression
+## ENSMUSG00000025900 ENSMUSG00000025900         Rp1 Gene Expression
+## ...                               ...         ...             ...
+## ENSMUSG00000095523 ENSMUSG00000095523  AC124606.1 Gene Expression
+## ENSMUSG00000095475 ENSMUSG00000095475  AC133095.2 Gene Expression
+## ENSMUSG00000094855 ENSMUSG00000094855  AC133095.1 Gene Expression
+## ENSMUSG00000095019 ENSMUSG00000095019  AC234645.1 Gene Expression
+## ENSMUSG00000095041 ENSMUSG00000095041  AC149090.1 Gene Expression</code></pre>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">colData</span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<pre><code>## DataFrame with 2702 rows and 9 columns
+##                            barcode_id array_row array_col pxl_col_in_fullres
+##                           &lt;character&gt; &lt;integer&gt; &lt;integer&gt;          &lt;integer&gt;
+## AAACAAGTATCTCCCA-1 AAACAAGTATCTCCCA-1        50       102               7237
+## AAACAATCTACTAGCA-1 AAACAATCTACTAGCA-1         3        43               1611
+## AAACACCAATAACTGC-1 AAACACCAATAACTGC-1        59        19               8315
+## AAACAGAGCGACTCCT-1 AAACAGAGCGACTCCT-1        14        94               2927
+## AAACCGGGTAGGTACC-1 AAACCGGGTAGGTACC-1        42        28               6280
+## ...                               ...       ...       ...                ...
+## TTGTTGTGTGTCAAGA-1 TTGTTGTGTGTCAAGA-1        31        77               4963
+## TTGTTTCACATCCAGG-1 TTGTTTCACATCCAGG-1        58        42               8195
+## TTGTTTCATTAGTCTA-1 TTGTTTCATTAGTCTA-1        60        30               8434
+## TTGTTTCCATACAACT-1 TTGTTTCCATACAACT-1        45        27               6639
+## TTGTTTGTGTAAATTC-1 TTGTTTGTGTAAATTC-1         7        51               2089
+##                    pxl_row_in_fullres   sample_id   x_coord   y_coord in_tissue
+##                             &lt;integer&gt; &lt;character&gt; &lt;integer&gt; &lt;numeric&gt; &lt;logical&gt;
+## AAACAAGTATCTCCCA-1               8229    Sample01      8229      2755      TRUE
+## AAACAATCTACTAGCA-1               4169    Sample01      4169      8381      TRUE
+## AAACACCAATAACTGC-1               2518    Sample01      2518      1677      TRUE
+## AAACAGAGCGACTCCT-1               7678    Sample01      7678      7065      TRUE
+## AAACCGGGTAGGTACC-1               3137    Sample01      3137      3712      TRUE
+## ...                               ...         ...       ...       ...       ...
+## TTGTTGTGTGTCAAGA-1               6508    Sample01      6508      5029      TRUE
+## TTGTTTCACATCCAGG-1               4100    Sample01      4100      1797      TRUE
+## TTGTTTCATTAGTCTA-1               3275    Sample01      3275      1558      TRUE
+## TTGTTTCCATACAACT-1               3068    Sample01      3068      3353      TRUE
+## TTGTTTGTGTAAATTC-1               4719    Sample01      4719      7903      TRUE</code></pre>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/SpatialExperiment/man/spatialCoords.html">spatialCoords</a></span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<pre><code>## DataFrame with 2702 rows and 3 columns
+##                      x_coord   y_coord in_tissue
+##                    &lt;integer&gt; &lt;numeric&gt; &lt;logical&gt;
+## AAACAAGTATCTCCCA-1      8229      2755      TRUE
+## AAACAATCTACTAGCA-1      4169      8381      TRUE
+## AAACACCAATAACTGC-1      2518      1677      TRUE
+## AAACAGAGCGACTCCT-1      7678      7065      TRUE
+## AAACCGGGTAGGTACC-1      3137      3712      TRUE
+## ...                      ...       ...       ...
+## TTGTTGTGTGTCAAGA-1      6508      5029      TRUE
+## TTGTTTCACATCCAGG-1      4100      1797      TRUE
+## TTGTTTCATTAGTCTA-1      3275      1558      TRUE
+## TTGTTTCCATACAACT-1      3068      3353      TRUE
+## TTGTTTGTGTAAATTC-1      4719      7903      TRUE</code></pre>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/SpatialExperiment/man/SpatialExperiment-methods.html">imgData</a></span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<pre><code>## DataFrame with 2 rows and 6 columns
+##     sample_id    image_id   data     width    height scaleFactor
+##   &lt;character&gt; &lt;character&gt; &lt;list&gt; &lt;integer&gt; &lt;integer&gt;   &lt;numeric&gt;
+## 1    Sample01      lowres              576       600   0.0510334
+## 2    Sample01       hires             1921      2000   0.1701114</code></pre>
+</div>
+<div id="plot-data" class="section level1">
+<h1 class="hasAnchor">
+<a href="#plot-data" class="anchor"></a>Plot data</h1>
+<p>We can also create a simple plot of the dataset, to check that it has been loaded correctly. We can use plotting functions available in the <a href="https://github.com/lmweber/ggspavis">ggspavis</a> package.</p>
+<p>The <a href="https://github.com/lmweber/ggspavis">ggspavis</a> package is also available from GitHub, so we install this first (if not already installed).</p>
+<p>Then, we load the package, and create a plot.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install ggspavis package</span>
+<span class="co"># remotes::install_github("lmweber/ggspavis")</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># load package</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lmweber/ggspavis">ggspavis</a></span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create plot</span>
+<span class="fu"><a href="https://rdrr.io/pkg/ggspavis/man/plotSpots.html">plotSpots</a></span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<p><img src="STdata_files/figure-html/unnamed-chunk-7-1.png" width="60%"></p>
+</div>
+<div id="exercise" class="section level1">
+<h1 class="hasAnchor">
+<a href="#exercise" class="anchor"></a>Exercise</h1>
+<p>The above plot does not show much – only the layout of the Visium spots under tissue in this sample. This is useful as a check that the dataset has been loaded correctly, but is not a very interesting plot.</p>
+<p>Next, we will create a more interesting plot showing ground truth cluster labels for a different dataset, and then continue with an exercise to modify this plot to display different information.</p>
+<p>For this exercise, we will use the “human DLPFC” dataset (which contains ground truth cluster labels).</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># load data object</span>
+<span class="va">spe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/STdata/man/load_data.html">load_data</a></span><span class="op">(</span><span class="st">"human_DLPFC"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create basic plot</span>
+<span class="fu"><a href="https://rdrr.io/pkg/ggspavis/man/plotSpots.html">plotSpots</a></span><span class="op">(</span><span class="va">spe</span><span class="op">)</span></code></pre></div>
+<p><img src="STdata_files/figure-html/unnamed-chunk-9-1.png" width="60%"></p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create plot showing ground truth cluster labels</span>
+<span class="fu"><a href="https://rdrr.io/pkg/ggspavis/man/plotSpots.html">plotSpots</a></span><span class="op">(</span><span class="va">spe</span>, discrete <span class="op">=</span> <span class="st">"ground_truth"</span>, palette <span class="op">=</span> <span class="st">"libd_layer_colors"</span><span class="op">)</span></code></pre></div>
+<p><img src="STdata_files/figure-html/unnamed-chunk-10-1.png" width="75%"></p>
+<p>For the exercise, try to modify this plot to show a continuous color gradient of total UMI counts per spot (instead of ground truth cluster labels).</p>
+<p>Below are some hints for how to do this.</p>
+<ul>
+<li>inspect the <code>spe</code> object to check how the data is stored (e.g. assays, row data, column data, spatial coordinates)</li>
+<li>check the help page of the plotting function (with <code><a href="https://rdrr.io/pkg/ggspavis/man/plotSpots.html">?plotSpots</a></code>) to check the required arguments</li>
+<li>are the values you need (total counts per spot) stored somewhere in the object? e.g. row data or column data? if not, how could you calculate them and store them in the object, so that the plotting function can access them?</li>
+</ul>
+<!-- Solution --><!-- colData(spe)$sum <- colSums(counts(spe)) --><!-- plotSpots(spe, continuous = "sum", palette = "navy") --><!-- Alternatively: another similar plot --><!-- (but not the solution; this shows cell counts per spot instead of UMI counts per spot) --><!-- plotSpots(spe, continuous = "cell_count", palette = "navy") -->
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
