@@ -30,7 +30,7 @@ understudy tissue.
 At the moment, we distinguish two main families of ST, **molecular-based** and
 **spot-based** technologies.
 
-## Molecular-Based family 
+## Molecular-Based family
 
 The main idea of these technologies is to detect the transcripts locations in
 a tissue in **multiple temporal snapshots** at the **cellular** and **sub-cellular** level.
@@ -81,7 +81,7 @@ whole transcriptome one.
 
 ## Spot-Based technologies
 
-The main idea of this technology is to provide uniquely identified (i.e. barcoded) 
+The main idea of this technology is to provide uniquely identified (i.e. barcoded)
 **reference spots** with associated **coordinates** and **transcripts abundance**.
 The number of cells in the spot depends on the spot size.
 
@@ -91,7 +91,7 @@ Main **differences** within this family are due to spots size and the spots refe
 
 ### The 10x Genomics Visium Spatial Gene Expression
 
-This technology uses ad-hoc designed **barcode-spots based chips** where **tissue slices** 
+This technology uses ad-hoc designed **barcode-spots based chips** where **tissue slices**
 can be placed on.
 
 The number of spots is pre-defined, so we already know how many spots are on
@@ -110,25 +110,25 @@ Here is an example of a **Mouse Brain tissue slice** placed on a 10x Visium chip
 
 <br>
 
-While we take a snapshot in full resolution of the on-chip places tissue slice, 
+While we take a snapshot in full resolution of the on-chip places tissue slice,
 the unique barcoded-spots **do cDNA amplification** of the transcripts.
 
-In such a way at the end, we have an **image reference** of the experiment and a 
+In such a way at the end, we have an **image reference** of the experiment and a
 **whole transcriptome** amplification per each spot.
 
 (Details about the experiment output will be given during the second part of
-this workshop by *Helena* and an example dataset will be provided during the 
+this workshop by *Helena* and an example dataset will be provided during the
 third part by *Lukas*.)
 
 # The SpatialExperiment class
 
 To facilitate the implementation of methodologies and spatial data handling
 in R, we designed a new class named [`SpatialExperiment`](https://bioconductor.org/packages/SpatialExperiment/).
-This class inherits from the popular Bioconductor class 
-[`SingleCellExperiment`](https://bioconductor.org/packages/SingleCellExperiment) 
+This class inherits from the popular Bioconductor class
+[`SingleCellExperiment`](https://bioconductor.org/packages/SingleCellExperiment)
 and extends it with specific slots and get/set methods for spatial data.
 
-Here is a schematics of the organization of the actual (devel version) 
+Here is a schematics of the organization of the actual (devel version)
 `SpatialExperiment` class.
 
 <br>
@@ -152,9 +152,9 @@ SpatialExperiment proper Methods:
 * *spatialCoords*: returns/sets the spatial coordinates
 * *spatialCoordsMtx*: returns the spatial coordinate (x_coord and y_coord) in matrix form.
 * *imgData*: gets/sets the imgData
-* *loadImg, unloadImg, addImg, removeImg*: imgData handling methods 
+* *loadImg, unloadImg, addImg, removeImg*: imgData handling methods
 * *isInTissue*: returns a boolean of inTissue spots
-* *spatialCoordsNames*: returns the name of stored spatial coordinates 
+* *spatialCoordsNames*: returns the name of stored spatial coordinates
 
 
 The *SpatialExperiment* class for this workshop is a *devel* version of it, but
@@ -177,7 +177,7 @@ install_github("drighelli/SpatialExperiment", ref="devel")
 
 # In short
 
-We provided the main overview of Spatial Transcriptomics technologies, focusing on 
+We provided the main overview of Spatial Transcriptomics technologies, focusing on
 seqFISH for the molecule-based family and on 10x Genomics Visium Spatial Expression
 for the spot-based ones.
 
@@ -187,9 +187,9 @@ attributes and specifically designed methods for attributes managing.
 This latest version of the class is still under development even it's already usable.
 
 
-# Extra Resources 
+# Extra Resources
 
-If you're interested in a **seqFISH dataset** you can retrieve it from the 
+If you're interested in a **seqFISH dataset** you can retrieve it from the
 [**SingleCellMultiModal** Bioconductor](https://bioconductor.org/packages/SpatialExperiment/) package.
 
 It is a multimodal dataset providing data for *seqFISH* and *scRNAseq* data,
