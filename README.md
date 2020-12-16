@@ -21,6 +21,7 @@ provided tools during the sessions.
 - [Dario Righelli](github.com/drighelli) (dario.righelli@gmail.com)
 - [Helena L. Crowell](github.com/HelenaLC) (helena.crowell@uzh.ch)
 - [Lukas M. Weber](https://lmweber.org/) (lukas.weber@jhu.edu)
+- [Davide Risso](github/drisso) (davide.risso@unipd.it)
 
 
 # Pre-requisites
