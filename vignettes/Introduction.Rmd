@@ -106,7 +106,7 @@ Here is an example of a **Mouse Brain tissue slice** placed on a 10x Visium chip
 <!-- <br> -->
 <br>
 
-<img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/visium_detected_tissue_image.png" alt="10x visium mouse brain" width="500"/>
+<img src="https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/raw/master/inst/imgs/visium_detected_tissue_image.jpg" alt="10x visium mouse brain" width="500"/>
 
 <br>
 
