@@ -1,12 +1,12 @@
 ---
-title: "2. The `SpatialExperiment` class"
+title: "2. The SpatialExperiment class"
 author:
     - name: "Helena L. Crowell"
       affiliation: "Department of Molecular Life Sciences, University of Zurich, Zurich, Switzerland"
       email: "helena.crowell@uzh.ch"
 output: rmarkdown::html_vignette
 vignette: >
-    %\VignetteIndexEntry{2. The `SpatialExperiment` class}
+    %\VignetteIndexEntry{2. The SpatialExperiment class}
     %\VignetteEngine{knitr::rmarkdown}
     %\VignetteEncoding{UTF-8}
 ---
