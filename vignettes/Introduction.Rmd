@@ -214,6 +214,7 @@ vignette("seqFISH", package="SingleCellMultiModal")
 
 
 
+
 # References
 
 - (seqFISH) Lubeck, E., Coskun, A., Zhiyentayev, T. et al. Single-cell in situ RNA profiling by sequential hybridization. Nat Methods 11, 360–361 (2014). https://doi.org/10.1038/nmeth.2892
