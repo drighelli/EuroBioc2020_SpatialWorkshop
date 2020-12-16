@@ -175,6 +175,7 @@ library(remotes)
 install_github("drighelli/SpatialExperiment", ref="devel")
 ```
 
+
 # In short
 
 We provided the main overview of Spatial Transcriptomics technologies, focusing on
