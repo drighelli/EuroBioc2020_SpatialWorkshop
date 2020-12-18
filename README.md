@@ -35,9 +35,9 @@ provided tools during the sessions.
 
 - Link to the `pkgdown` [website](https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/).
 - Link to [Docker image](https://hub.docker.com/r/drighelli/eurobioc2020spatialworkshop).
-- The `SpatialExperiment` (under development) class used in this workshop at [github](https://github.com/drighelli/SpatialExperiment/tree/devel). 
-- The `STdata` package [link](https://github.com/drighelli/STdata).
-- The `ggspavis` package [link](https://github.com/drighelli/link).
+- The `SpatialExperiment` (under development) class used in this workshop at [github](https://github.com/drighelli/SpatialExperiment/tree/eurobioc2020). 
+- The `STdata` package [link](https://github.com/lmweber/STdata).
+- The `ggspavis` package [link](https://github.com/lmweber/ggspavis).
 
 
 ## To use the Docker image:

@@ -71,8 +71,8 @@ Suggests:
     rmarkdown,
     pkgdown
 Remotes:
+    drighelli/SpatialExperiment@eurobioc2020,
     drighelli/STdata@main,
-    drighelli/SpatialExperiment@devel,
     drighelli/ggspavis@main
 URL: https://drighelli.github.io/EuroBioc2020_SpatialWorkshop/
 BugReports: https://github.com/drighelli/EuroBioc2020_SpatialWorkshop/issues/new/

@@ -163,7 +163,9 @@ we are confident that it'll be the reference class for spot-based family technol
 To simplify your analysis today, you can use the **Docker image** simply by running:
 
 ```{bash eval=FALSE}
+
 docker run -e PASSWORD=<SET_A_PASSWORD> -p 8787:8787 drighelli/eurobioc2020spatialworkshop
+
 ```
 
 Once docker command finished download and installation, navigate to [https://localhost:8787/](https://localhost:8787/) and then login with rstudio:<YourChosenPassword>.
@@ -171,8 +173,10 @@ Once docker command finished download and installation, navigate to [https://loc
 Alternatively, you can install the devel version of the class with following commands:
 
 ```{r eval=FALSE}
+
 library(remotes)
-install_github("drighelli/SpatialExperiment", ref="devel")
+install_github("drighelli/SpatialExperiment", ref="eurobioc2020")
+
 ```
 
 
@@ -207,11 +211,10 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("SingleCellMultiModal")
 
-library(SingleCellMultiModal)
+library("SingleCellMultiModal")
 vignette("seqFISH", package="SingleCellMultiModal")
 
 ```
-
 
 
 
